@@ -1,4 +1,6 @@
 
+var pointPlayer_1=0;
+var pointPlayer_2=0;
 
 function createBoard()
 {
@@ -197,6 +199,8 @@ function isValidMove(source, target, drop, pawn)
     }
     
     var jumped = false;
+    var player1_Container = document.getElementById("p1");
+    var player2_Container = document.getElementById("p2");
     
     if(Math.abs(xEnd- xStart)===2)
     {
@@ -210,8 +214,20 @@ function isValidMove(source, target, drop, pawn)
         }
         if(Drop)
         {
+            if(img.id.substr(0,1)=="w")
+            {
+                pointPlayer_2+=1;
+                player2_Container.textContent = pointPlayer_2;
+            }
+            else
+            {
+                pointPlayer_1+=1;
+                player1_Container.textContent = pointPlayer_1;
+            }
             div.removeChild(img);
             jumped=true;
+            console.log(pointPlayer_1);
+            console.log(pointPlayer_2);
         }
 
     }
