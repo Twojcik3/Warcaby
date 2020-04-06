@@ -122,7 +122,7 @@ body
     margin-left: 20px;
     border-radius: 29px;
 }
-#Player_1, #Player_2, #time, #move
+#Player_1, #Player_2, #move
 {
     font-size: 30px;
     margin-left: 20px;
@@ -131,17 +131,42 @@ body
     margin-top: 20px;
     
 }
-#point_1, #point_2, #time, #name_p1, #name_p2, #move
+#point_1, #point_2, #name_p1, #name_p2, #move
 {
     width: 100px;
     float: left;
     margin-top: 10px;
 }
-#p1, #p2, #time_s, #n1, #n2, #move_color
+#p1, #p2, #n1, #n2, #move_color
 {
     width: 150px;
     height: 34px;
     font-size: 30px;
     float: left;
     margin-top: 10px;
+}
+
+.last-screen-hide
+{
+    display: none;
+}
+.last-screen {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 80vw;
+    height: 80vh;
+    opacity: 0.85;
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    background-color: black;
+    box-shadow: 0 50px 30px 10px black;
+    z-index: 100;
+    padding: 1rem;
 }

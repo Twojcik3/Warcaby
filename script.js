@@ -8,6 +8,9 @@ var myInput1 = document.getElementById('myInput_1');
 var myInput2 = document.getElementById('myInput_2');
 var name1 = document.getElementById('n1');
 var name2 = document.getElementById('n2');
+var whoMove = document.getElementById('move_color');
+var score1 = document.getElementById('p1');
+var score2 = document.getElementById('p2');
 
 myButton.addEventListener('click', function()
 {
@@ -239,7 +242,7 @@ function isValidMove(source, target, drop, pawn)
             }
             div.removeChild(img);
             jumped=true;
-            
+            console.log(score1.value);
         }
 
     }
@@ -259,7 +262,18 @@ function isValidMove(source, target, drop, pawn)
 }
 createBoard();
 canDrop();
+ifEnd();
 
+
+
+function ifEnd()
+{
+    if(score1.value=="1")
+    {
+        console.log(1);
+    }
+
+}
 function NextPlayer(pawn)
 {
     var pawns = document.querySelectorAll('img');
@@ -273,6 +287,14 @@ function NextPlayer(pawn)
         else
         {
             p.draggable=true;
+            if(p.id.substr(0,1).toUpperCase()=="W")
+            {
+                whoMove.textContent = name1.textContent;
+            }
+            else
+            {
+                whoMove.textContent = name2.textContent;
+            }
         }
         p.classList.remove("jumpOnly");
     }
