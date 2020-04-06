@@ -10,6 +10,66 @@ body
     background-image: url(images/background.jpg);
     height: 100vh;
 }
+
+.first_screen
+{
+    position: absolute;
+    top: 5%;
+    left: 16%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 1300px;
+    height: 820px;
+    opacity: 0.80;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #aaa;
+    background-color: black;
+    box-shadow: 0 50px 30px 10px black;
+    z-index: 100;
+    padding: 1rem;
+}
+.first_screen_hide
+{
+    display: none;
+}
+.names
+{
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+    line-height: 2em;
+    text-transform: uppercase;
+}
+#start_game
+{
+    background-color: white;
+    width: fit-content;
+    padding: 1em;
+    font-size: 1.6em;
+    transition: color 0.2s;
+    align-self: center;
+    font-weight: 700;
+    color: black;
+    border: none
+}
+#start_game:hover
+{
+    background-color: darkgrey;
+    color:white;
+    border: none;
+}
+#myInput_1, #myInput_2 {
+    width: 200px;
+    height: 50px;
+    margin-bottom: 20px;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+
+
 .container
 {
     margin-left: auto;
@@ -37,6 +97,7 @@ body
     width: 346px;
     margin-left: 25px;
     border: 2px solid white;
+    color: white;
 }
 
 .white_field, .black_field
@@ -66,7 +127,7 @@ body
     font-size: 30px;
     margin-left: 20px;
     width: 300px;
-    height: 100px;
+    height: 150px;
     margin-top: 20px;
     
 }

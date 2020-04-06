@@ -2,6 +2,19 @@
 var pointPlayer_1=0;
 var pointPlayer_2=0;
 
+var firstScreen = document.querySelector(".first_screen");
+var myButton = document.querySelector('.btn');
+var myInput1 = document.getElementById('myInput_1');
+var myInput2 = document.getElementById('myInput_2');
+var name1 = document.getElementById('n1');
+var name2 = document.getElementById('n2');
+
+myButton.addEventListener('click', function()
+{
+    name1.textContent = myInput1.value;
+    name2.textContent = myInput2.value;
+    firstScreen.classList.add('first_screen_hide');
+});
 function createBoard()
 {
     //creating board
@@ -214,7 +227,7 @@ function isValidMove(source, target, drop, pawn)
         }
         if(Drop)
         {
-            if(img.id.substr(0,1)=="w")
+            if(img.id.substr(0,1)=="w" || img.id.substr(0,1)=="W")
             {
                 pointPlayer_2+=1;
                 player2_Container.textContent = pointPlayer_2;
@@ -226,8 +239,7 @@ function isValidMove(source, target, drop, pawn)
             }
             div.removeChild(img);
             jumped=true;
-            console.log(pointPlayer_1);
-            console.log(pointPlayer_2);
+            
         }
 
     }
