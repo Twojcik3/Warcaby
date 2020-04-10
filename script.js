@@ -11,6 +11,9 @@ var name2 = document.getElementById('n2');
 var whoMove = document.getElementById('move_color');
 var score1 = document.getElementById('p1');
 var score2 = document.getElementById('p2');
+var lastScreen = document.querySelector('.last-screen-hide');
+var winner = document.querySelector('.winner');
+var newGame = document.querySelector('.btn_newGame');
 
 myButton.addEventListener('click', function()
 {
@@ -255,23 +258,35 @@ function isValidMove(source, target, drop, pawn)
             source.classList.add("jumpOnly");
         }
     }
-    
+    ifEnd();
 
     
     return true;
 }
 createBoard();
 canDrop();
-ifEnd();
 
 
 
+newGame.addEventListener('click', function()
+{
+    window.location.reload();
+});
 function ifEnd()
 {
-    if(score1.value=="1")
+    var score1 = document.getElementById('p1');
+    var score2 = document.getElementById('p2');
+    if(score1.textContent=="12")
     {
-        console.log(1);
+        lastScreen.classList.add('last-screen');
+        winner.textContent = name1.textContent;
     }
+    else if(score2.textContent=="12")
+    {
+        lastScreen.classList.add('last-screen');
+        winner.textContent = name2.textContent;
+    }
+    
 
 }
 function NextPlayer(pawn)
